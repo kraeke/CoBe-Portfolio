@@ -1,28 +1,97 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header />
+    <Content 
+      title="Hi I am Ben Coenjaerts" 
+      subTitle="Wordpress Developer and Graphic Designer from Luxembourg"
+    >
+    </Content>
+    <div class="container-fluid py-5">
+      <div class="container">
+        <Work 
+          v-for="value in workValue" 
+          v-bind:key="value.id" 
+          
+          :name="value.name" 
+          :image="value.image"
+          :url="value.url"
+        />
+      </div>
+    </div>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
+import Content from './components/Content.vue'
+import Work from './components/Work.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
+    Content,
+    Work
+  },
+  data (){
+    return{
+      workValue: [
+        {id: 0, name: 'Lorem Ipsum', image: 'https://picsum.photos/1920/1080', url: 'project1.html'},
+        {id: 1, name: 'Dolor sit amet', image: 'https://picsum.photos/1920/1082', url: 'project1.html'},
+        {id: 2, name: 'Sit Ipsum Lorem dolor', image: 'https://picsum.photos/1920/1081', url: 'project1.html'},
+        {id: 1, name: 'Dolor sit amet', image: 'https://picsum.photos/1920/1082', url: 'project1.html'},
+        {id: 2, name: 'Sit Ipsum Lorem dolor', image: 'https://picsum.photos/1920/1081', url: 'project1.html'},
+        {id: 1, name: 'Dolor sit amet', image: 'https://picsum.photos/1920/1082', url: 'project1.html'},
+        {id: 2, name: 'Sit Ipsum Lorem dolor', image: 'https://picsum.photos/1920/1081', url: 'project1.html'}
+      ]
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  /* MAIN */
+
+  *{
+    box-sizing: border-box;
+  }
+  body{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: $font1;
+    font-size: 1.2em;
+  }
+  .container-fluid{
+    width: 100vw;
+  }
+  .container{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  /* FORMATTING */
+  h1{
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+    color: $grey;
+  }
+  h2{
+    margin: 0;
+    padding: 0;
+    font-size: 1.8em;
+    color: $black;
+  }
+  a{
+    text-decoration: none;
+    color: $grey;
+    transition: 0.5s;
+
+    &:hover{
+      color: $black;
+    }
+  }
 </style>

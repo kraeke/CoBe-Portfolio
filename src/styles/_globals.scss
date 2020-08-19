@@ -1,0 +1,126 @@
+/* GLOBALS */
+.p-0{
+    padding: 0;
+}
+.p-1{
+    padding: 1em;
+}
+.p-2{
+    padding: 2em;
+}
+.p-3{
+    padding: 3em;
+}
+.p-4{
+    padding: 4em;
+}
+.p-5{
+    padding: 5em;
+}
+.py-0{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.py-1{
+    padding: 1em 0;
+}
+.py-2{
+    padding: 2em 0;
+}
+.py-3{
+    padding: 3em 0;
+}
+.py-4{
+    padding: 4em 0;
+}
+.py-5{
+    padding: 5em 0;
+}
+.px-0{
+    padding-left: 0;
+    padding-right: 0;
+}
+.px-1{
+    padding: 0 1em;
+}
+.px-2{
+    padding: 0 2em;
+}
+.px-3{
+    padding: 0 3em;
+}
+.px-4{
+    padding: 0 4em;
+}
+.px-5{
+    padding: 0 5em;
+}
+
+.m-0{
+    margin: 0;
+}
+.m-1{
+    margin: 1em;
+}
+.m-2{
+    margin: 2em;
+}
+.m-3{
+    margin: 3em;
+}
+.m-4{
+    margin: 4em;
+}
+.m-5{
+    margin: 5em;
+}
+.my-0{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.my-1{
+    margin: 1em 0;
+}
+.my-2{
+    margin: 2em 0;
+}
+.my-3{
+    margin: 3em 0;
+}
+.my-4{
+    margin: 4em 0;
+}
+.my-5{
+    margin: 5em 0;
+}
+.mx-0{
+    margin-left: 0;
+    margin-right: 0;
+}
+.mx-1{
+    margin: 0 1em;
+}
+.mx-2{
+    margin: 0 2em;
+}
+.mx-3{
+    margin: 0 3em;
+}
+.mx-4{
+    margin: 0 4em;
+}
+.mx-5{
+    margin: 0 5em;
+}
+
+.bg-color1{
+    background-color: $color1;
+}
+.bg-color2{
+    background-color: $color2;
+    color: white !important;
+
+    h1,h2,p,div{
+        color: white !important;
+    }
+}
