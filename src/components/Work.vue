@@ -20,14 +20,10 @@ export default {
 
 <style lang="scss" scoped>
   .work{
-    width: 48%;
-    display: inline-block;
-    margin-bottom: 2%;
     transition: 0.5s;
+    grid-column: span 2;
 
     &:hover{
-      transform: scale(1.1);
-
       .work-name{
         &::before{
           background-color: $color2;
@@ -35,37 +31,35 @@ export default {
       }
     }
     &:first-child{
-      margin-left: 0;
-      margin-right: 2%;
+      grid-column: span 3 ;
     }
     &:nth-child(2n){
-      margin-left: 2%;
-      margin-right: 0;
+      grid-column: span 2;
+      grid-row: span 2;
     }
-    &:nth-child(3n){
-      width: 100%;
-      margin: 0 0 2% !important;
+    &:nth-child(3n){ 
+      grid-column: span 3;
     }
     &:nth-child(4n){
-      width: 34%;
-      margin-left: 0;
-      margin-right: 2%;
+      grid-column: span 2;
     }
     &:nth-child(5n){
-      width: 62%;
-      margin-left: 2%;
-      margin-right: 0;
+      grid-column: span 3;
+    }
+    &:nth-child(10){
+      grid-column: span 3;
+      grid-row: span 1;
     }
     
     .work-image{
       width: 100%;
-      height: 400px;
+      height: calc(100% - 3rem);
       background-size: cover;
       background-position: center;
     }
     .work-name{
       display: inline-block;
-      line-height: 3em;
+      line-height: 3rem;
 
       &::before{
         content: "";
