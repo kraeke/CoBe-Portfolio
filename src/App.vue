@@ -1,69 +1,26 @@
 <template>
   <div id="app">
-    <Navigation v-bind:navData="navLinks"></Navigation>
-    <Header />
-    <Content 
-      title="Hi I am Ben Coenjaerts &#128400;" 
-      subTitle="Wordpress Developer and Graphic Designer from Luxembourg"
-    >
-    </Content>
-    <div class="container-fluid py-5">
-      <div class="container grid">
-        <Work 
-          v-for="value in workValue" 
-          v-bind:key="value.id" 
-          
-          :name="value.name" 
-          :image="value.image"
-          :url="value.url"
-        />
-      </div>
-    </div>
-
+    <nav :style="{fontSize : isLight}">
+      <div><router-link to="/">Home</router-link></div>
+      <div><router-link to="/Work">Work</router-link></div>
+      <div><router-link to="/About">About</router-link></div>
+    </nav>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Content from './components/Content.vue'
-import Work from './components/Work.vue'
-import Navigation from './components/Navigation.vue'
-
-export default {
-  name: 'App',
-  components: {
-    Header,
-    Content,
-    Work,
-    Navigation
-  },
-  data (){
-    return{
-      workValue: [
-        {id: 0, name: 'Lorem Ipsum', image: 'https://picsum.photos/1920/1080', url: 'project1.html'},
-        {id: 1, name: 'Dolor sit amet', image: 'https://picsum.photos/1920/1082', url: 'project1.html'},
-        {id: 2, name: 'Sit Ipsum Lorem dolor', image: 'https://picsum.photos/1920/1089', url: 'project1.html'},
-        {id: 1, name: 'Dolor sit amet', image: 'https://picsum.photos/1920/1082', url: 'project1.html'},
-        {id: 2, name: 'Sit Ipsum Lorem dolor', image: 'https://picsum.photos/1920/1081', url: 'project1.html'},
-        {id: 1, name: 'Dolor sit amet', image: 'https://picsum.photos/1920/1042', url: 'project1.html'},
-        {id: 2, name: 'Sit Ipsum Lorem dolor', image: 'https://picsum.photos/1920/1051', url: 'project1.html'},
-        {id: 2, name: 'Sit Ipsum Lorem dolor', image: 'https://picsum.photos/1920/1082', url: 'project1.html'},
-        {id: 2, name: 'Sit Ipsum Lorem dolor', image: 'https://picsum.photos/1920/1181', url: 'project1.html'},
-        {id: 2, name: 'Sit Ipsum Lorem dolor', image: 'https://picsum.photos/1920/1281', url: 'project1.html'}
-      ],
-      navLinks: [
-        {id: 0, name: 'Home', location: "/home"},
-        {id: 1, name: 'Work', location: "/work"},
-        {id: 2, name: 'About me', location: "/about"},
-      ]
+  export default {
+    data: function() {
+      return {
+        isLight: 1
+      };
     }
   }
-}
 </script>
 
 <style lang="scss">
   /* MAIN */
-
   *{
     box-sizing: border-box;
   }
@@ -82,6 +39,23 @@ export default {
     width: 100%;
     max-width: 1200px;
     margin: auto;
+  }
+
+  /* NAVIGATION */
+
+  nav{
+    position: fixed;
+    line-height: 100px;
+    padding: 0 1rem;
+
+    div{
+      display: inline-block;
+      padding: 0 1rem;
+
+      a{
+        color: white;
+      }
+    }
   }
 
   /* FORMATTING */

@@ -2,8 +2,8 @@ $font1:   'Poppins', sans-serif;
 
 $color1:#ff9068;
 $color2:#fd746c;
-$grey:  #D3D9DC;
 $black: #2f3541;
-$white: #eef1fb;
+$grey:  lighten($black, 50%);
+$white:  lighten($black, 75%);
 
 @import "_globals.scss";
